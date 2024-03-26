@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Yew App</title>
+  </head>
+  <body>
+    <div id="asd">
+      1
+    </div>
+  </body>
+  <footer id="footer">
+    Last Saved:
+  </footer>
+</html>
+
+<script>
+  // Auto Polling to update this HTML file.
+  POLLING_INTERVAL_SEC = 3;
+  
+  let updated = 1
+  let footer_info = document.getElementById("footer").innerHTML
+
+  function repeater() {
+    console.log("Hello World!");
+    updated += 1;
+    document.getElementById("asd").innerHTML = updated
+    document.getElementById("footer").innerHTML = "Last Saved: " + new Date
+  }
+
+  setInterval(repeater, POLLING_INTERVAL_SEC * 1000);
+
+</script>
